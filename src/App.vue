@@ -46,7 +46,7 @@
     </v-main>
     <v-footer class="red">
       <div class="black d-flex align-center justify-center">
-        <center class="">
+        <!-- <center class="">
           <h4>
             <span class="font-weight-light">Site desenvolvido por:</span>
             Raphael Ferreira Bertoldo &copy; Direitos Reservados
@@ -55,7 +55,7 @@
             O uso indevido de qualquer intrumental pode ter penalidades
             judiciais conforme o art.74582
           </p>
-        </center>
+        </center> -->
       </div>
     </v-footer>
   </v-app>
@@ -64,10 +64,6 @@
 <script>
 export default {
   name: "App",
-
-  data: () => ({
-    //
-  }),
 };
 </script>
 <style scoped>
