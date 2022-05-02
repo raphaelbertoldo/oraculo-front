@@ -1,6 +1,6 @@
-<template>
+<template class="">
   <v-app class="all">
-    <v-app-bar app color="#0A141D" dark>
+    <v-app-bar app color="#0A141D" dark class="">
       <div class="d-flex align-center">
         <v-img
           alt="logo"
@@ -25,7 +25,11 @@
           <div class="px-6">BEATS DE FUNK</div>
           <v-divider vertical color="grey"></v-divider>
 
-          <div class="px-6">TODOS OS BEATS</div>
+          <div class="px-6 white--text">
+            <router-link to="/allbeats" class="white--text noline"
+              >TODOS OS BEATS</router-link
+            >
+          </div>
           <v-divider vertical color="grey"></v-divider>
 
           <div class="px-6">SERVIÇO PERSONALIZADO</div>
@@ -41,10 +45,11 @@
       </div>
     </v-app-bar>
 
-    <v-main>
+    <v-main class="pri-color-2">
       <router-view />
     </v-main>
-    <v-footer class="red">
+    <v-footer color="#6ddf3e" id="player" class="">
+      <div class="w-full" style="width: 100%"></div>
       <div class="black d-flex align-center justify-center">
         <!-- <center class="">
           <h4>
@@ -63,11 +68,40 @@
 
 <script>
 export default {
+  data() {
+    return {
+      playerFooter: true,
+
+      secColor: "#6ddf3e",
+    };
+  },
+  components: {},
   name: "App",
 };
 </script>
 <style scoped>
 .all {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.pri-color {
+  background-color: rgb(0, 0, 29);
+  /* #0A141D */
+}
+.pri-color-2 {
+  background-color: rgb(0, 0, 20);
+  /* #0A141D */
+}
+.sec-color {
+  background-color: rgb(109, 223, 62);
+  /* #6ddf3e */
+}
+.neongreen {
+  box-shadow: 0 0 1em rgb (109, 223, 62);
+}
+.dark-back {
+  background-color: rgb(10, 20, 29);
+}
+.noline {
+  text-decoration: none;
 }
 </style>
