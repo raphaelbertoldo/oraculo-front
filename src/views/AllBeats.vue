@@ -91,20 +91,35 @@
                 id="beat_current_audio"
                 src="../assets/beats/beat-01-funk.wav"
               ></audio>
-
-              <!-- PRIMEIRO MARCADOR - EXCLUSIVE ONLY -->
-              <!-- <div
-                class="vertical rounded-t-xl inn-shadow-1 white pa-2 mt-4"
-                style="height: auto"
-              >
-                <div class="pr-2">
-                  <center>
-                    <span style="font-style: italic" class="font-weight-medium"
-                      >EXCLUSIVE ONLY
-                    </span>
-                  </center>
-                </div>
-              </div> -->
+            </div>
+          </div>
+          <div class="mx-10 mr-16">
+            <div
+              class="
+                pa-4
+                rounded-lg
+                flex
+                font-change
+                white--text
+                mx-10
+                mr-10
+                sec-solor-op3
+              "
+            >
+              <h2 class="font-weight-light d-flex justify-center">
+                Licença Exclusiva
+              </h2>
+              <div class="mt-4">
+                <p>
+                  -Licença 100% Exclusiva, ou seja, o beat não será
+                  comercializado para outros artistas.
+                </p>
+                <p>
+                  -Contrato de exclusividade vitalício, sem prazo de término.
+                </p>
+                <p>-Arquivo WAV e faixas separadas.</p>
+                <p>-Versão Mixado e Masterizado.</p>
+              </div>
             </div>
           </div>
         </div>
@@ -113,13 +128,22 @@
   </div>
 </template>
 <script>
+import beats from "../services/beats";
 import PlayerCardCurrent from "../components/PlayerCardCurrent.vue";
 import PlayerCardList from "../components/PlayerCardList.vue";
 export default {
+  mounted() {
+    beats.list().then((res) => {
+      this.beats = res.data;
+      console.log(this.beats);
+    });
+  },
   name: "allbeats",
 
   data() {
     return {
+      // beats: [],
+
       i: "",
       playcurrent: false,
       beatcurrent: 0,
@@ -282,6 +306,12 @@ export default {
 };
 </script>
 <style scoped>
+.op-3 {
+  opacity: 0.3;
+}
+.font-change {
+  font-family: "Courier New", Courier, monospace;
+}
 .all {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -297,6 +327,10 @@ export default {
   background-color: rgb(109, 223, 62);
   /* #6ddf3e */
 }
+.sec-solor-op3 {
+  background-color: rgba(250, 0, 196, 0.963);
+}
+
 .neongreen {
   box-shadow: 0 0 1em rgb (109, 223, 62);
 }

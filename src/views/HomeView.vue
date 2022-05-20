@@ -1,35 +1,43 @@
 <template>
-  <div class="size-all d-flex px-16">
-    <div class="size-all d-flex justify-space-between pa-10">
-      <audio src="./assets/video.mp4"></audio>
-      <video controls src="./assets/video.mp4"></video>
-      <v-card elevation-0 class="ma-12 white--text"
-        ><div class="dark-back borderx size-all">
-          <v-card-title>01010101</v-card-title>
-          <v-card-subtitle>010101010101</v-card-subtitle>
-        </div>
-      </v-card>
-      <v-card elevation-0 class="ma-12 white--text"
-        ><div class="dark-back borderx size-all">
-          <v-card-title>01010101</v-card-title>
-          <v-card-subtitle>010101010101</v-card-subtitle>
-        </div>
-      </v-card>
-      <v-card elevation-0 class="ma-12 white--text"
-        ><div class="neongreen dark-back borderx size-all">
-          <v-card-title>01010101</v-card-title>
-          <v-card-subtitle>010101010101</v-card-subtitle>
-        </div>
-      </v-card>
+  <div class="">
+    <div class="element">
+      <div class="white--text">fdgdsdfsdfgdgf</div>
     </div>
   </div>
 </template>
 
-<script>
-export default {
-  name: "Home",
 
+<script>
+import beats from "../services/beats";
+
+export default {
+  mounted() {
+    beats.list().then((res) => {
+      console.log(res.data);
+      this.beats = res.data;
+    });
+  },
+  name: "Home",
   components: {},
+  computed: {
+    // agroupname: function (index) {
+    //   return index.groupBy(({ idade }) => idade);
+    // },
+  },
+  data() {
+    return {
+      beats: [],
+
+      array: [
+        //   { name: "Raphael", idade: "20" },
+        //   { name: "Raphael", idade: "23" },
+        //   { name: "Amanda", idade: "20" },
+        //   { name: "Amanda", idade: "23" },
+        //   { name: "Patrick", idade: "20" },
+        //   { name: "Patrick", idade: "23" },
+      ],
+    };
+  },
 };
 </script>
 <style scoped>
@@ -45,5 +53,25 @@ export default {
 }
 .neongreen {
   box-shadow: 0 0 1em rgb (109, 223, 62);
+}
+.image-back {
+  background-image: url(../assets/image-back.jpeg);
+  background-position: 20% 40%;
+  background-attachment: fixed;
+  opacity: 0.5;
+}
+.element::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: url("../assets/image-back.jpeg");
+  opacity: 0.4;
+  content: "";
+  z-index: -1;
+}
+.no-opc {
+  opacity: none;
 }
 </style>
