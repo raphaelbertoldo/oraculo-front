@@ -136,7 +136,7 @@
             outlined
             class="inn-shadow-2 mx-2"
             @click="$emit('handlePlay')"
-            v-else
+            v-if="playcurrent === false"
           >
             <v-icon color="white" large> mdi-play </v-icon>
           </v-btn>
@@ -174,11 +174,9 @@
 <script>
 export default {
   methods: {},
-  props: ["beats", "index"],
+  props: ["beats", "index", "playcurrent"],
   data() {
-    return {
-      playcurrent: false,
-    };
+    return {};
   },
   computed: {
     beatcurrent() {
@@ -211,13 +209,8 @@ export default {
   transform: rotate(45deg);
 }
 .gradiente-green {
-  background-color: rgb(11, 58, 28);
-  background-image: linear-gradient(
-    to right,
-    rgb(109, 223, 62),
-    transparent,
-    rgb(62, 125, 35)
-  );
+  background-color: rgba(250, 0, 196, 0.963);
+  background-image: linear-gradient(to right, rgb(62, 223, 204));
 }
 .gradiente-purple {
   background-image: linear-gradient(

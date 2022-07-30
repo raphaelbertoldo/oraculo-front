@@ -12,13 +12,14 @@
         ml-4
         rounded-lg
         eletavion-4
+        change-cursor
       "
+      @click="$emit('cardCurrent')"
     >
-      <div class="inn-shadow-2 d-flex justify-center mt-6 ml-6 mr-6 rounded-lg">
+      <div class="d-flex justify-center mt-6 ml-6 mr-6 rounded-lg">
         <v-img
-          @click="$emit('cardCurrent')"
           :aspect-ratio="1 / 1"
-          class="change-cursor d-flex justify-end rounded-lg elevation-8"
+          class="d-flex justify-end rounded-lg elevation-8"
           :src="index.img"
         />
       </div>

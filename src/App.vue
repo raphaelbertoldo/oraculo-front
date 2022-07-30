@@ -1,6 +1,11 @@
 <template class="">
-  <v-app class="all">
-    <v-app-bar app color="#0A141D" dark class="">
+  <v-app class="all" color="black">
+    <v-app-bar
+      app
+      color="black"
+      dark
+      class="hidden-sm-and-down elevation-5 inn-shadow-1"
+    >
       <div class="d-flex align-center">
         <v-img
           alt="logo"
@@ -19,24 +24,25 @@
           src="./assets/logo-name-green.png"
           width="100"
         />
-        <div class="d-flex pa-5">
+        <div class="d-flex">
           <div class="px-6">
-            <router-link to="/" class="white--text noline">INICIO</router-link>
-          </div>
-          <v-divider vertical color="grey"></v-divider>
-          <div class="px-6">BEATS DE TRAP</div>
-          <v-divider vertical color="grey"></v-divider>
-          <div class="px-6">BEATS DE FUNK</div>
-          <v-divider vertical color="grey"></v-divider>
-
-          <div class="px-6">
-            <router-link to="/allbeats" class="white--text noline"
-              >TODOS OS BEATS</router-link
+            <router-link to="/" class="white--text noline"
+              ><h3>INICIO</h3></router-link
             >
           </div>
           <v-divider vertical color="grey"></v-divider>
-
-          <div class="px-6">SERVIÇO PERSONALIZADO</div>
+          <div class="px-6">
+            <router-link to="/allbeats" class="white--text noline"
+              ><h3>BEATS</h3></router-link
+            >
+          </div>
+          <v-divider vertical color="grey"></v-divider>
+          <div class="px-6"><h3>PACKS</h3></div>
+          <v-divider vertical color="grey"></v-divider>
+          <v-divider vertical color="grey"></v-divider>
+          <div class="px-6"><h3>ABOUT</h3></div>
+          <v-divider vertical color="grey"></v-divider>
+          <div class="px-6"><h3>SERVIÇOS</h3></div>
         </div>
       </div>
 
@@ -46,6 +52,13 @@
         <v-icon class="px-2">mdi-instagram</v-icon>
         <v-icon class="px-2">mdi-facebook</v-icon>
         <v-icon class="px-2">mdi-whatsapp</v-icon>
+        <a
+          href="http://youtube.com/c/OráculoBeats?sub_confirmation=1"
+          target="_blank"
+          style="text-decoration: none"
+        >
+          <v-icon class="px-2">mdi-youtube</v-icon>
+        </a>
       </div>
     </v-app-bar>
 
@@ -106,8 +119,13 @@ export default {
 };
 </script>
 <style scoped>
+@font-face {
+  font-family: Oxanium;
+  src: url(assets/Oxanium-Regular.ttf);
+}
+
 .all {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: Oxanium;
 }
 .pri-color {
   background-color: rgb(0, 0, 29);
@@ -129,5 +147,26 @@ export default {
 }
 .noline {
   text-decoration: none;
+}
+.inn-shadow-1 {
+  box-shadow: -1px -1px 10px 1px rgb(99, 3, 255),
+    1px 1px 15px 1px rgb(0, 255, 85);
+}
+@keyframes shadow-anim {
+  from {
+    box-shadow: -1px -1px 10px 1px rgb(99, 3, 255),
+      1px 1px 15px 1px rgb(0, 255, 85);
+  }
+  to {
+    box-shadow: -1px -1px 10px 1px rgb(255, 3, 32),
+      1px 1px 15px 1px rgb(255, 174, 0);
+  }
+}
+.inn-shadow-animation {
+  box-shadow: -1px -1px 10px 1px rgb(99, 3, 255),
+    1px 1px 15px 1px rgb(0, 255, 85);
+  animation-name: shadow-anim;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
 }
 </style>

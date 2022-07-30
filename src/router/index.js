@@ -2,6 +2,9 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import AllBeats from '../views/AllBeats.vue'
+import Serviços from '../views/Serviços.vue'
+import AddBeat from '../views/AddBeat'
+
 
 
 Vue.use(VueRouter)
@@ -16,6 +19,16 @@ const routes = [
     path: '/allbeats',
     name: 'allbeats',
     component: AllBeats
+  },
+  {
+    path: '/servicos',
+    name: 'servicos',
+    component: Serviços
+  }, 
+  {
+    path: '/addbeat',
+    name: 'AddBeat',
+    component: AddBeat
   },
 
 ]

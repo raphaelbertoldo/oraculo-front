@@ -73,6 +73,7 @@
         </div>
       </v-col>
       <!-- SEGUNDA COLUNA - PLAYER -->
+      <h1 class="white--text">{{ beats }}teste</h1>
       <v-col cols="12" lg="4" class="">
         <h1 class="white--text"></h1>
         <div>
@@ -137,154 +138,161 @@ export default {
       this.beats = res.data;
       console.log(this.beats);
     });
+    // beats.delete().then((res) => {
+    //   this.beats = res.data;
+    //   console.log(this.beats);
+    // });
   },
   name: "allbeats",
 
   data() {
     return {
-      // beats: [],
+      beats: [],
 
       i: "",
       playcurrent: false,
       beatcurrent: 0,
-      beats: [
-        {
-          title: "Beat de Trap Luxo",
-          subtitle: "Beat de Trap estilo Chefin, Matuê, Teto...",
-          img: require("../assets/img1.jpg"),
-          file: "",
-          bpm: "136",
-          beatkey: "Am",
-          style: "TRAP ",
-          open: true,
-          license: "Exclusiva",
-        },
-        {
-          title: "Beat de Trap SP",
-          subtitle: "Beat de Trap estilo Chefin, Matuê, Teto...",
-          img: require("../assets/img2.jpg"),
-          file: "",
-          bpm: "136",
-          beatkey: "Am",
-          style: "TRAP",
-          open: true,
-          license: "Exclusiva",
-        },
-        {
-          title: "Beat de Trap Oriental",
-          subtitle: "Beat de Trap estilo Chefin, Matuê, Teto...",
-          img: require("../assets/img3.jpg"),
-          file: "",
-          bpm: "136",
-          beatkey: "Am",
-          style: "TRAP",
-          license: "Exclusiva",
-        },
-        {
-          title: "Beat de Trap Cuba",
-          subtitle: "Beat de Trap estilo Chefin, Matuê, Teto...",
-          img: require("../assets/img4.jpg"),
-          file: "",
-          bpm: "136",
-          beatkey: "Am",
-          style: "TRAP",
-          license: "Lease",
-        },
-        {
-          title: "Beat de Trap Luxo",
-          subtitle: "Beat de Trap estilo Chefin, Matuê, Teto...",
-          img: require("../assets/img1.jpg"),
-          file: "",
-          bpm: "136",
-          beatkey: "Am",
-          style: "TRAP ",
-          open: true,
-          license: "Exclusiva",
-        },
-        {
-          title: "Beat de Trap SP",
-          subtitle: "Beat de Trap estilo Chefin, Matuê, Teto...",
-          img: require("../assets/img2.jpg"),
-          file: "",
-          bpm: "136",
-          beatkey: "Am",
-          style: "TRAP",
-          open: true,
-          license: "Exclusiva",
-        },
-        {
-          title: "Beat de Trap Oriental",
-          subtitle: "Beat de Trap estilo Chefin, Matuê, Teto...",
-          img: require("../assets/img3.jpg"),
-          file: "",
-          bpm: "136",
-          beatkey: "Am",
-          style: "TRAP",
-          license: "Exclusiva",
-        },
-        {
-          title: "Beat de Trap Cuba",
-          subtitle: "Beat de Trap estilo Chefin, Matuê, Teto...",
-          img: require("../assets/img4.jpg"),
-          file: "",
-          bpm: "136",
-          beatkey: "Am",
-          style: "TRAP",
-          license: "Lease",
-        },
-        {
-          title: "Beat de Trap Luxo",
-          subtitle: "Beat de Trap estilo Chefin, Matuê, Teto...",
-          img: require("../assets/img1.jpg"),
-          file: "",
-          bpm: "136",
-          beatkey: "Am",
-          style: "TRAP ",
-          open: true,
-          license: "Exclusiva",
-        },
-        {
-          title: "Beat de Trap SP",
-          subtitle: "Beat de Trap estilo Chefin, Matuê, Teto...",
-          img: require("../assets/img2.jpg"),
-          file: "",
-          bpm: "136",
-          beatkey: "Am",
-          style: "TRAP",
-          open: true,
-          license: "Exclusiva",
-        },
-        {
-          title: "Beat de Trap Oriental",
-          subtitle: "Beat de Trap estilo Chefin, Matuê, Teto...",
-          img: require("../assets/img3.jpg"),
-          file: "",
-          bpm: "136",
-          beatkey: "Am",
-          style: "TRAP",
-          license: "Exclusiva",
-        },
-        {
-          title: "Beat de Trap Cuba",
-          subtitle: "Beat de Trap estilo Chefin, Matuê, Teto...",
-          img: require("../assets/img4.jpg"),
-          file: "",
-          bpm: "136",
-          beatkey: "Am",
-          style: "TRAP",
-          license: "Lease",
-        },
-      ],
+      // beats: [
+      //   {
+      //     title: "Beat de Trap Luxo",
+      //     subtitle: "Beat de Trap estilo Chefin, Matuê, Teto...",
+      //     img: require("../assets/img1.jpg"),
+      //     file: require("../assets/beats/beat-01-funk.wav"),
+      //     bpm: "136",
+      //     beatkey: "Am",
+      //     style: "TRAP ",
+      //     open: true,
+      //     license: "Exclusiva",
+      //   },
+      //   {
+      //     title: "Beat de Trap SP",
+      //     subtitle: "Beat de Trap estilo Chefin, Matuê, Teto...",
+      //     img: require("../assets/img2.jpg"),
+      //     file: "",
+      //     bpm: "139",
+      //     beatkey: "Cm",
+      //     style: "TRAP",
+      //     open: true,
+      //     license: "Exclusiva",
+      //   },
+      //   {
+      //     title: "Beat de Trap Oriental",
+      //     subtitle: "Beat de Trap estilo Chefin, Matuê, Teto...",
+      //     img: require("../assets/img3.jpg"),
+      //     file: "",
+      //     bpm: "136",
+      //     beatkey: "Fm",
+      //     style: "TRAP",
+      //     license: "Exclusiva",
+      //   },
+      //   {
+      //     title: "Beat de Trap Cuba",
+      //     subtitle: "Beat de Trap estilo Chefin, Matuê, Teto...",
+      //     img: require("../assets/img4.jpg"),
+      //     file: "",
+      //     bpm: "136",
+      //     beatkey: "Am",
+      //     style: "TRAP",
+      //     license: "Lease",
+      //   },
+      //   {
+      //     title: "Beat de Trap Luxo",
+      //     subtitle: "Beat de Trap estilo Chefin, Matuê, Teto...",
+      //     img: require("../assets/img1.jpg"),
+      //     file: "",
+      //     bpm: "136",
+      //     beatkey: "Am",
+      //     style: "TRAP ",
+      //     open: true,
+      //     license: "Exclusiva",
+      //   },
+      //   {
+      //     title: "Beat de Trap SP",
+      //     subtitle: "Beat de Trap estilo Chefin, Matuê, Teto...",
+      //     img: require("../assets/img2.jpg"),
+      //     file: "",
+      //     bpm: "136",
+      //     beatkey: "Am",
+      //     style: "TRAP",
+      //     open: true,
+      //     license: "Exclusiva",
+      //   },
+      //   {
+      //     title: "Beat de Trap Oriental",
+      //     subtitle: "Beat de Trap estilo Chefin, Matuê, Teto...",
+      //     img: require("../assets/img3.jpg"),
+      //     file: "",
+      //     bpm: "136",
+      //     beatkey: "Am",
+      //     style: "TRAP",
+      //     license: "Exclusiva",
+      //   },
+      //   {
+      //     title: "Beat de Trap Cuba",
+      //     subtitle: "Beat de Trap estilo Chefin, Matuê, Teto...",
+      //     img: require("../assets/img4.jpg"),
+      //     file: "",
+      //     bpm: "136",
+      //     beatkey: "Am",
+      //     style: "TRAP",
+      //     license: "Lease",
+      //   },
+      //   {
+      //     title: "Beat de Trap Luxo",
+      //     subtitle: "Beat de Trap estilo Chefin, Matuê, Teto...",
+      //     img: require("../assets/img1.jpg"),
+      //     file: "",
+      //     bpm: "136",
+      //     beatkey: "Am",
+      //     style: "TRAP ",
+      //     open: true,
+      //     license: "Exclusiva",
+      //   },
+      //   {
+      //     title: "Beat de Trap SP",
+      //     subtitle: "Beat de Trap estilo Chefin, Matuê, Teto...",
+      //     img: require("../assets/img2.jpg"),
+      //     file: "",
+      //     bpm: "136",
+      //     beatkey: "Am",
+      //     style: "TRAP",
+      //     open: true,
+      //     license: "Exclusiva",
+      //   },
+      //   {
+      //     title: "Beat de Trap Oriental",
+      //     subtitle: "Beat de Trap estilo Chefin, Matuê, Teto...",
+      //     img: require("../assets/img3.jpg"),
+      //     file: "",
+      //     bpm: "136",
+      //     beatkey: "Am",
+      //     style: "TRAP",
+      //     license: "Exclusiva",
+      //   },
+      //   {
+      //     title: "Beat de Trap Cuba",
+      //     subtitle: "Beat de Trap estilo Chefin, Matuê, Teto...",
+      //     img: require("../assets/img4.jpg"),
+      //     file: "",
+      //     bpm: "136",
+      //     beatkey: "Am",
+      //     style: "TRAP",
+      //     license: "Lease",
+      //   },
+      // ],
     };
   },
   methods: {
     handlePlay() {
-      window.beat_current_audio.play();
       this.playcurrent = true;
+      window.beat_current_audio.play();
+      console.log(this.playcurrent);
+      console.log(this.beats[this.beatcurrent].file);
     },
     handlePause() {
       window.beat_current_audio.pause();
       this.playcurrent = false;
+      console.log(this.playcurrent);
     },
     nextCard() {
       this.i++;
