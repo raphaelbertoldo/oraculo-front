@@ -1,6 +1,7 @@
 <template class="pri-color">
   <div class="pri-color mb-16">
     <h2 class="white--text pt-6 pl-6">Todos os Beats</h2>
+
     <v-row class="mt-6 pri-color">
       <v-col cols="12" lg="8" class="pr-8">
         <div class="d-flex">
@@ -63,7 +64,7 @@
                       <v-icon class="mb-1 mr-n2"
                         >mdi-music-accidental-sharp</v-icon
                       >
-                      {{ beat.beatkey }}
+                      {{ beat.key }}
                     </span>
                   </div>
                 </div>
@@ -73,7 +74,7 @@
         </div>
       </v-col>
       <!-- SEGUNDA COLUNA - PLAYER -->
-      <h1 class="white--text">{{ beats }}teste</h1>
+      <!-- <h1 class="white--text">{{ beats }}teste</h1> -->
       <v-col cols="12" lg="4" class="">
         <h1 class="white--text"></h1>
         <div>
@@ -88,10 +89,6 @@
                 :beats="beats"
                 :playcurrent="playcurrent"
               />
-              <audio
-                id="beat_current_audio"
-                src="../assets/beats/beat-01-funk.wav"
-              ></audio>
             </div>
           </div>
           <div class="mx-10 mr-16">
@@ -152,142 +149,12 @@ export default {
       i: "",
       playcurrent: false,
       beatcurrent: 0,
-      // beats: [
-      //   {
-      //     title: "Beat de Trap Luxo",
-      //     subtitle: "Beat de Trap estilo Chefin, Matuê, Teto...",
-      //     img: require("../assets/img1.jpg"),
-      //     file: require("../assets/beats/beat-01-funk.wav"),
-      //     bpm: "136",
-      //     beatkey: "Am",
-      //     style: "TRAP ",
-      //     open: true,
-      //     license: "Exclusiva",
-      //   },
-      //   {
-      //     title: "Beat de Trap SP",
-      //     subtitle: "Beat de Trap estilo Chefin, Matuê, Teto...",
-      //     img: require("../assets/img2.jpg"),
-      //     file: "",
-      //     bpm: "139",
-      //     beatkey: "Cm",
-      //     style: "TRAP",
-      //     open: true,
-      //     license: "Exclusiva",
-      //   },
-      //   {
-      //     title: "Beat de Trap Oriental",
-      //     subtitle: "Beat de Trap estilo Chefin, Matuê, Teto...",
-      //     img: require("../assets/img3.jpg"),
-      //     file: "",
-      //     bpm: "136",
-      //     beatkey: "Fm",
-      //     style: "TRAP",
-      //     license: "Exclusiva",
-      //   },
-      //   {
-      //     title: "Beat de Trap Cuba",
-      //     subtitle: "Beat de Trap estilo Chefin, Matuê, Teto...",
-      //     img: require("../assets/img4.jpg"),
-      //     file: "",
-      //     bpm: "136",
-      //     beatkey: "Am",
-      //     style: "TRAP",
-      //     license: "Lease",
-      //   },
-      //   {
-      //     title: "Beat de Trap Luxo",
-      //     subtitle: "Beat de Trap estilo Chefin, Matuê, Teto...",
-      //     img: require("../assets/img1.jpg"),
-      //     file: "",
-      //     bpm: "136",
-      //     beatkey: "Am",
-      //     style: "TRAP ",
-      //     open: true,
-      //     license: "Exclusiva",
-      //   },
-      //   {
-      //     title: "Beat de Trap SP",
-      //     subtitle: "Beat de Trap estilo Chefin, Matuê, Teto...",
-      //     img: require("../assets/img2.jpg"),
-      //     file: "",
-      //     bpm: "136",
-      //     beatkey: "Am",
-      //     style: "TRAP",
-      //     open: true,
-      //     license: "Exclusiva",
-      //   },
-      //   {
-      //     title: "Beat de Trap Oriental",
-      //     subtitle: "Beat de Trap estilo Chefin, Matuê, Teto...",
-      //     img: require("../assets/img3.jpg"),
-      //     file: "",
-      //     bpm: "136",
-      //     beatkey: "Am",
-      //     style: "TRAP",
-      //     license: "Exclusiva",
-      //   },
-      //   {
-      //     title: "Beat de Trap Cuba",
-      //     subtitle: "Beat de Trap estilo Chefin, Matuê, Teto...",
-      //     img: require("../assets/img4.jpg"),
-      //     file: "",
-      //     bpm: "136",
-      //     beatkey: "Am",
-      //     style: "TRAP",
-      //     license: "Lease",
-      //   },
-      //   {
-      //     title: "Beat de Trap Luxo",
-      //     subtitle: "Beat de Trap estilo Chefin, Matuê, Teto...",
-      //     img: require("../assets/img1.jpg"),
-      //     file: "",
-      //     bpm: "136",
-      //     beatkey: "Am",
-      //     style: "TRAP ",
-      //     open: true,
-      //     license: "Exclusiva",
-      //   },
-      //   {
-      //     title: "Beat de Trap SP",
-      //     subtitle: "Beat de Trap estilo Chefin, Matuê, Teto...",
-      //     img: require("../assets/img2.jpg"),
-      //     file: "",
-      //     bpm: "136",
-      //     beatkey: "Am",
-      //     style: "TRAP",
-      //     open: true,
-      //     license: "Exclusiva",
-      //   },
-      //   {
-      //     title: "Beat de Trap Oriental",
-      //     subtitle: "Beat de Trap estilo Chefin, Matuê, Teto...",
-      //     img: require("../assets/img3.jpg"),
-      //     file: "",
-      //     bpm: "136",
-      //     beatkey: "Am",
-      //     style: "TRAP",
-      //     license: "Exclusiva",
-      //   },
-      //   {
-      //     title: "Beat de Trap Cuba",
-      //     subtitle: "Beat de Trap estilo Chefin, Matuê, Teto...",
-      //     img: require("../assets/img4.jpg"),
-      //     file: "",
-      //     bpm: "136",
-      //     beatkey: "Am",
-      //     style: "TRAP",
-      //     license: "Lease",
-      //   },
-      // ],
     };
   },
   methods: {
     handlePlay() {
       this.playcurrent = true;
       window.beat_current_audio.play();
-      console.log(this.playcurrent);
-      console.log(this.beats[this.beatcurrent].file);
     },
     handlePause() {
       window.beat_current_audio.pause();
@@ -296,12 +163,14 @@ export default {
     },
     nextCard() {
       this.i++;
-
       this.beatcurrent++;
+      this.playcurrent = false;
+      // this.handlePlay();
     },
     prevCard() {
       this.i--;
       this.beatcurrent--;
+      this.playcurrent = false;
     },
     cardCurrent(index) {
       this.i = index;

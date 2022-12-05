@@ -1,6 +1,7 @@
 <template>
   <div class="d-flex mb-16">
     <h1 class="white--text"></h1>
+    <audio id="beat_current_audio" :src="beatcurrent.beat || ''"></audio>
 
     <v-card
       type="list"
@@ -20,7 +21,7 @@
         <v-img
           :aspect-ratio="1 / 1"
           class="d-flex justify-end rounded-lg elevation-8"
-          :src="beatcurrent.img"
+          :src="beatcurrent.art"
         >
           <div class="">
             <div class="d-flex align-end justify-end">
@@ -31,7 +32,6 @@
                   white--text
                   px-6
                   mt-6
-                  ML-4
                   pl-16
                   mr-n14
                   gradiente-green
@@ -41,11 +41,11 @@
                   elevation-8
                 "
               >
-                Licença {{ beatcurrent.license }}
+                Licença
               </center>
             </div>
-          </div></v-img
-        >
+          </div>
+        </v-img>
       </div>
       <v-card-title class="white--text mx-2 d-flex justify-center align-center">
         <div class="">
@@ -79,7 +79,7 @@
           <div class="px-4 mx-2 inn-shadow-1 sec-color rounded-xl">
             <center>
               <span style="font-style: italic" class="font-weight-black">{{
-                beatcurrent.beatkey
+                beatcurrent.key
               }}</span>
             </center>
           </div>
@@ -180,6 +180,11 @@ export default {
   },
   computed: {
     beatcurrent() {
+      console.log("here", this.beats[this.index]);
+      console.log(
+        "🚀 ~ file: PlayerCardCurrent.vue:187 ~ beatcurrent ~ beat",
+        this.index
+      );
       return this.beats[this.index];
     },
   },

@@ -20,7 +20,7 @@
         <v-img
           :aspect-ratio="1 / 1"
           class="d-flex justify-end rounded-lg elevation-8"
-          :src="index.img"
+          :src="index.art"
         />
       </div>
       <v-card-title class="white--text mx-2">
@@ -53,6 +53,8 @@
   </div>
 </template>
 <script>
+import { api } from "../services/config";
+
 export default {
   secondColor: "#350455",
   // props: ["title", "subtitle", "img", "beatkey", "bpm", "index"],
@@ -62,6 +64,12 @@ export default {
     return {
       type: "list",
     };
+  },
+  computed: {
+    api() {
+      console.log(api);
+      return `${api}`;
+    },
   },
 };
 </script>
