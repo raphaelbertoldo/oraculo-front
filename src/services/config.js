@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export const api = "http://localhost:3000";
+export const api = "https://api-oraculo.up.railway.app";
 export const http = axios.create({
   baseURL: api,
 });
