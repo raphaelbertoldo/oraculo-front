@@ -1,55 +1,89 @@
 <template>
-  <div class="d-flex">
-    <v-card
-      :style="cardStyle"
-      type="list"
-      :aspect-ratio="1 / 2"
-      color="#350455"
-      class="
-        widthcardlist
-        gradiente-purple
-        white--text
-        ml-4
-        rounded-lg
-        eletavion-4
-        change-cursor
-      "
-      @click="$emit('cardCurrent')"
-    >
-      <div class="d-flex justify-center mt-6 ml-6 mr-6 rounded-lg">
-        <v-img
-          :aspect-ratio="1 / 1"
-          class="d-flex justify-end rounded-lg elevation-8"
-          :src="index.art"
-        />
+  <div class="ml-md-6 d-flex">
+    <div class="d-flex">
+      <v-card
+        :style="cardStyle"
+        type="list"
+        :aspect-ratio="1 / 2"
+        color="#350455"
+        :class="greenShadow"
+        class="
+          widthcardlist
+          gradiente-purple
+          white--text
+          ml-4
+          rounded-lg
+          eletavion-4
+          change-cursor
+        "
+        @click="$emit('cardCurrent')"
+      >
+        <div class="d-flex justify-center mt-6 ml-6 mr-6 rounded-lg">
+          <v-img
+            :aspect-ratio="1 / 1"
+            class="d-flex justify-end rounded-lg elevation-8"
+            :src="index.art"
+          />
+        </div>
+        <v-card-title class="white--text mx-2">
+          {{ index.title }}
+        </v-card-title>
+        <v-card-subtitle class="white--text d-flex justify-space-between mx-2"
+          ><span>{{ index.subtitle }}</span>
+        </v-card-subtitle>
+        <!-- <v-card-actions class="mt-n6 pa-6 d-flex justify-space-between">
+          <span
+            @click="$emit('cardCurrent')"
+            style="font-style: italic"
+            class="change-cursor font-weight-black inn-shadow-2 rounded-lg px-2"
+          >
+            <v-icon color="white" class="mb-1"> mdi-play </v-icon>
+            Ouvir
+          </span>
+          <span
+            style="font-style: italic"
+            class="change-cursor font-weight-black inn-shadow-2 rounded-lg px-2"
+          >
+            <v-icon color="white" @click="$emit('teste')" class="mb-1">
+              mdi-shopping
+            </v-icon>
+            Comprar
+          </span>
+        </v-card-actions> -->
+      </v-card>
+    </div>
+    <div class="flex-column" style="position: relative">
+      <!-- PRIMEIRO MARCADOR - ESTILO MUSICAL -->
+      <div
+        class="inn-shadow-1 sec-color rounded-r-xl pa-2 mt-4"
+        style="height: auto"
+      >
+        <div class="pr-2">
+          <center>
+            <span style="font-style: italic" class="font-weight-bold">{{
+              index.style
+            }}</span>
+          </center>
+        </div>
       </div>
-      <v-card-title class="white--text mx-2">
-        {{ index.title }}
-      </v-card-title>
-      <v-card-subtitle class="white--text d-flex justify-space-between mx-2"
-        ><span>{{ index.subtitle }}</span>
-      </v-card-subtitle>
-
-      <v-card-actions class="mt-n6 pa-6 d-flex justify-space-between">
-        <span
-          @click="$emit('cardCurrent')"
-          style="font-style: italic"
-          class="change-cursor font-weight-black inn-shadow-2 rounded-lg px-2"
-        >
-          <v-icon color="white" class="mb-1"> mdi-play </v-icon>
-          Ouvir
-        </span>
-        <span
-          style="font-style: italic"
-          class="change-cursor font-weight-black inn-shadow-2 rounded-lg px-2"
-        >
-          <v-icon color="white" @click="$emit('teste')" class="mb-1">
-            mdi-shopping
-          </v-icon>
-          Comprar
-        </span>
-      </v-card-actions>
-    </v-card>
+      <!-- SEGUNDO MARCADOR - BPM  -->
+      <div class="sec-color rounded-r-xl pa-1 mt-4 pa-2" style="height: auto">
+        <div class="">
+          <center>
+            <span class="font-weight-bold">{{ index.bpm }}</span> bpm
+          </center>
+        </div>
+      </div>
+      <!-- TERCEIRO MARCADOR  -->
+      <div class="sec-color rounded-r-xl pa-1 mt-4 pa-2" style="height: auto">
+        <div class="">
+          <span class="font-weight-bold" style="font-style: italic">
+            <v-icon class="mb-1 mr-n2">mdi-music-accidental-sharp</v-icon>
+            {{ index.key }}
+          </span>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 <script>

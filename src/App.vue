@@ -65,7 +65,7 @@
     <v-main class="pri-color-2">
       <router-view />
     </v-main>
-    <v-footer fixed>
+    <!-- <v-footer fixed>
       <div class="w-full" style="width: 100%"></div>
       <div
         class="
@@ -76,16 +76,16 @@
           align-space-between align-center
         "
       >
-        <!-- <h4>
+         <h4>
           <span class="font-weight-light">Site desenvolvido por:</span>
           Raphael Ferreira Bertoldo &copy; 2022 Todos os Direitos Reservados
         </h4>
         <h3 class="font-weight-medium">
           O uso indevido de qualquer intrumental pode ter penalidades judiciais
           conforme o art.74582
-        </h3> -->
+        </h3> 
       </div>
-    </v-footer>
+    </v-footer> -->
   </v-app>
 </template>
 

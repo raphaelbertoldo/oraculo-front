@@ -19,56 +19,12 @@
               <PlayerCardList
                 :card-style="
                   beatcurrent === index
-                    ? { boxShadow: '0 0 20px lime !important' }
+                    ? { boxShadow: '0 0 20px #00ff00 !important' }
                     : {}
                 "
                 :index="beat"
                 @cardCurrent="cardCurrent(index)"
               />
-
-              <!-- MARCADOR LATERAL -->
-              <div class="flex-column" style="position: relative">
-                <!-- PRIMEIRO MARCADOR - ESTILO MUSICAL -->
-                <div
-                  class="inn-shadow-1 sec-color rounded-r-xl pa-2 mt-4"
-                  style="height: auto"
-                >
-                  <div class="pr-2">
-                    <center>
-                      <span
-                        style="font-style: italic"
-                        class="font-weight-bold"
-                        >{{ beat.style }}</span
-                      >
-                    </center>
-                  </div>
-                </div>
-                <!-- SEGUNDO MARCADOR - BPM  -->
-                <div
-                  class="sec-color rounded-r-xl pa-1 mt-4 pa-2"
-                  style="height: auto"
-                >
-                  <div class="">
-                    <center>
-                      <span class="font-weight-bold">{{ beat.bpm }}</span> bpm
-                    </center>
-                  </div>
-                </div>
-                <!-- TERCEIRO MARCADOR  -->
-                <div
-                  class="sec-color rounded-r-xl pa-1 mt-4 pa-2"
-                  style="height: auto"
-                >
-                  <div class="">
-                    <span class="font-weight-bold" style="font-style: italic">
-                      <v-icon class="mb-1 mr-n2"
-                        >mdi-music-accidental-sharp</v-icon
-                      >
-                      {{ beat.key }}
-                    </span>
-                  </div>
-                </div>
-              </div>
             </v-col>
           </v-row>
         </div>
