@@ -62,43 +62,17 @@
       </div>
     </v-app-bar>
 
-    <v-main class="pri-color-2">
+    <v-main class="pri-color-2 all">
       <router-view />
     </v-main>
-    <!-- <v-footer fixed>
-      <div class="w-full" style="width: 100%"></div>
-      <div
-        class="
-          flex
-          d-flex
-          flex-row-reverse
-          justify-space-between
-          align-space-between align-center
-        "
-      >
-         <h4>
-          <span class="font-weight-light">Site desenvolvido por:</span>
-          Raphael Ferreira Bertoldo &copy; 2022 Todos os Direitos Reservados
-        </h4>
-        <h3 class="font-weight-medium">
-          O uso indevido de qualquer intrumental pode ter penalidades judiciais
-          conforme o art.74582
-        </h3> 
-      </div>
-    </v-footer> -->
+    
   </v-app>
 </template>
 
 <script>
-// import beats from "./services/beats";
 
 export default {
-  // mounted() {
-  //   beats.list().then((res) => {
-  //     console.log(res.data);
-  //     this.beats = res.data;
-  //   });
-  // },
+ 
 
   data() {
     return {
@@ -112,10 +86,13 @@ export default {
   name: "App",
 };
 </script>
-<style scoped>
+<style>
 @font-face {
   font-family: Oxanium;
   src: url(assets/Oxanium-Regular.ttf);
+}
+html {
+  background: #000;
 }
 
 .all {

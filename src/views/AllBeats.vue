@@ -1,17 +1,17 @@
 <template class="pri-color">
-  <div class="pri-color mb-16">
+  <div class="pri-color mb-16 zoom-90">
     <h2 class="white--text pt-6 pl-6">Todos os Beats</h2>
 
     <v-row class="mt-6 pri-color">
-      <v-col cols="12" lg="8" class="pr-8">
+      <v-col cols="12" lg="8" class="px-8">
         <div class="d-flex">
-          <v-row class="">
+          <v-row>
             <v-col
               cols="12"
               sm="6"
               md="4"
               xl="4"
-              class="d-flex"
+              class="d-flex mt-4"
               v-for="(beat, index) in beats"
               :key="index"
             >
@@ -49,16 +49,7 @@
           </div>
           <div class="mx-10 mr-16">
             <div
-              class="
-                pa-4
-                rounded-lg
-                flex
-                font-change
-                white--text
-                mx-10
-                mr-10
-                sec-solor-op3
-              "
+              class="pa-4 rounded-lg flex font-change white--text mx-10 mr-10 sec-solor-op3"
             >
               <h2 class="font-weight-light d-flex justify-center">
                 Licença Exclusiva
@@ -139,6 +130,9 @@ export default {
 };
 </script>
 <style scoped>
+.zoom-90 {
+  zoom: 80%;
+}
 .op-3 {
   opacity: 0.3;
 }
